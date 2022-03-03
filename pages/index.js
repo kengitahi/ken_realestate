@@ -6,7 +6,6 @@ import Banner from '../components/Banner';
 import Property from '../components/Property';
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-    console.log(propertiesForSale, propertiesForRent);
     return (
         <Box>
             <Banner
