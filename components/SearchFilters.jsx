@@ -12,8 +12,8 @@ export default function SearchFilters() {
     const router = useRouter()
 
     const searchProperties = (filterValues) => {
-        const path=router.pathname
-        const {query} = router
+        const path = router.pathname
+        const { query } = router
         const values = getFilterValues(filterValues)
 
         values.forEach((item) => {
