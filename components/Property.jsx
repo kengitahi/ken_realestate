@@ -23,10 +23,10 @@ export default function Property({ property: { coverPhoto, price, rentFrequency,
                             <Text fontWeight="bold" fontSize="lg">AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                         </Flex>
                         <Box>
-                            <Avatar size="sm" src={agency?.logo?.url} w="200" />
+                            <Avatar size="sm" src={agency?.logo?.url} w="200px" />
                         </Box>
                     </Flex>
-                    <Flex alignItems="center" padding="1" justifyContent="space-between" w="250" color="blue.450">
+                    <Flex alignItems="center" padding="1" justifyContent="space-between" w="250px" color="blue.400">
                         {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
                     </Flex>
                     <Text fontSize="lg">
