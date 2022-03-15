@@ -12,13 +12,12 @@ export default function PropertyDetails({propertyDetails:{price, description, ty
     return(
         <Box maxWidth="1000px" margin="auto" p="4">
             {photos && <ImageScrollbar data={photos} />}
-
         </Box>
     )
 }
 
 export async function getServerSideProps({params: {id}}) {
-    const data = await fetchApi(`${baseUrl}/properties/details?externalID=${id}`);
+    const data = await fetchApi(`${baseUrl}/properties/detail?externalID=${id}`);
     return {
         props: {
             propertyDetails: data

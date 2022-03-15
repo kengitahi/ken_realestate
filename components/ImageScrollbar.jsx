@@ -1,4 +1,4 @@
-import { useContext } from "react/"
+import { useContext } from "react"
 import Image from "next/image"
 import { Box, Icon, Flex } from "@chakra-ui/react"
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu"
@@ -8,10 +8,10 @@ const LeftArrow = () => {
     const { scrollPrev } = useContext(VisibilityContext)
 
     return (
-        <Flex justifyContent="center" alignItems="center" margin="1">
+        <Flex justifyContent="center" alignItems="center" marginRight="1">
             <Icon
                 as={FaArrowAltCircleLeft}
-                onClick={scrollPrev}
+                onClick={() => scrollPrev()}
                 fontSize="2xl"
                 cursor="pointer"
             />
@@ -23,10 +23,10 @@ const RightArrow = () => {
     const { scrollNext } = useContext(VisibilityContext)
 
     return (
-        <Flex justifyContent="center" alignItems="center" margin="1">
+        <Flex justifyContent="center" alignItems="center" marginLeft="1">
             <Icon
                 as={FaArrowAltCircleRight}
-                onClick={scrollNext}
+                onClick={() => scrollNext()}
                 fontSize="2xl"
                 cursor="pointer"
             />
@@ -38,13 +38,12 @@ export default function ImageScrollbar({ data }) {
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{ overflow: 'hidden' }}>
             {data.map((item) => (
-                <Box itemID={item.id} width="900px" overflow="hidden" p="1">
+                <Box itemID={item.id} key={item.id} width="910px" overflow="hidden" p="1">
                     <Image
                         alt="property"
                         placeholder="blur"
-                        blurDataUrl={item.url}
+                        blurDataURL={item.url}
                         src={item.url}
-                        key={item.id}
                         width="1000"
                         height="500"
                         sizes="(max-width:500px) 100px, (max-width:1023x) 400px, 1000px"
